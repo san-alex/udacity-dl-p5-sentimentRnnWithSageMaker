@@ -71,7 +71,7 @@ def predict_fn(input_data, model):
     #         data_len - The length of the review
 
     data_X = review_to_words(input_data)
-    data_len = convert_and_pad(model.word_dict, data_X)
+    data_X, data_len = convert_and_pad(model.word_dict, data_X)
 
     # Using data_X and data_len we construct an appropriate input tensor. Remember
     # that our model expects input data of the form 'len, review[500]'.
